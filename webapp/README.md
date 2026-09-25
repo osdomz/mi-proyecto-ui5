@@ -52,3 +52,5 @@ La aplicación se abrirá mediante el servidor de desarrollo de UI5.
 ## Objetivo
 
 Proyecto realizado como práctica para trabajar con la arquitectura y los principales conceptos de desarrollo de aplicaciones con OpenUI5.
+
+osdomz.mi-proyecto-ui5

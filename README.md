@@ -27,15 +27,23 @@ El proyecto permite crear, editar, eliminar y buscar tareas, mostrando su estado
 ## Estructura
 
 ```text
-webapp/
-├── Component.js
-├── index.html
-├── manifest.json
-├── controller/
-│   └── App.controller.js
-└── view/
-    ├── App.view.xml
-    └── TaskDialog.fragment.xml
+mi-proyecto-ui5/
+├── node_modules/
+├── webapp/
+│   ├── controller/
+│   │   └── App.controller.js
+│   ├── model/
+│   ├── view/
+│   │   ├── App.view.xml
+│   │   └── TaskDialog.fragment.xml
+│   ├── Component.js
+│   ├── index.html
+│   └── manifest.json
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+└── ui5.yaml
 ```
 
 ## Instalación
@@ -53,4 +61,4 @@ La aplicación se abrirá mediante el servidor de desarrollo de UI5.
 
 Proyecto realizado como práctica para trabajar con la arquitectura y los principales conceptos de desarrollo de aplicaciones con OpenUI5.
 
-osdomz.mi-proyecto-ui5
+osdomz/mi-proyecto-ui5

@@ -1,0 +1,165 @@
+<mvc:View
+    controllerName="mi.app.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Shell>
+
+        <App>
+
+            <pages>
+
+                <Page
+                    title="Panel de Gestión de Tareas"
+                    showHeader="true">
+
+                    <content>
+
+                        <VBox class="sapUiMediumMargin">
+
+                            <!-- Resumen -->
+
+                            <HBox
+                                justifyContent="SpaceBetween"
+                                wrap="Wrap"
+                                class="sapUiSmallMarginBottom">
+
+                                <ObjectNumber
+                                    number="{/Resumen/total}"
+                                    unit="Total"
+                                    emphasized="true"
+                                    class="sapUiSmallMarginEnd" />
+
+                                <ObjectNumber
+                                    number="{/Resumen/pendientes}"
+                                    unit="Pendientes"
+                                    state="Error"
+                                    class="sapUiSmallMarginEnd" />
+
+                                <ObjectNumber
+                                    number="{/Resumen/proceso}"
+                                    unit="En proceso"
+                                    state="Warning"
+                                    class="sapUiSmallMarginEnd" />
+
+                                <ObjectNumber
+                                    number="{/Resumen/completadas}"
+                                    unit="Completadas"
+                                    state="Success" />
+
+                            </HBox>
+
+
+                            <!-- Tabla -->
+
+                            <Table
+                                id="taskTable"
+                                items="{/Tareas}"
+                                growing="true"
+                                growingThreshold="10"
+                                growingScrollToLoad="true">
+
+                                <headerToolbar>
+
+                                    <OverflowToolbar>
+
+                                        <Title
+                                            text="Listado de tareas"
+                                            level="H2" />
+
+                                        <ToolbarSpacer />
+
+                                        <SearchField
+                                            width="250px"
+                                            placeholder="Buscar tarea..."
+                                            search=".onBuscarTarea" />
+
+                                        <Button
+                                            text="Añadir tarea"
+                                            press=".onAgregarTarea"
+                                            icon="sap-icon://add"
+                                            type="Emphasized" />
+
+                                    </OverflowToolbar>
+
+                                </headerToolbar>
+
+
+                                <columns>
+
+                                    <Column width="70px">
+                                        <Text text="ID" />
+                                    </Column>
+
+                                    <Column>
+                                        <Text text="Título" />
+                                    </Column>
+
+                                    <Column width="150px">
+                                        <Text text="Estado" />
+                                    </Column>
+
+                                    <Column
+                                        width="140px"
+                                        hAlign="Center">
+                                        <Text text="Acciones" />
+                                    </Column>
+
+                                </columns>
+
+
+                                <items>
+
+                                    <ColumnListItem>
+
+                                        <cells>
+
+                                            <Text text="{id}" />
+
+                                            <Text
+                                                text="{titulo}"
+                                                wrapping="true" />
+
+                                            <ObjectStatus
+                                                text="{estado}"
+                                                state="{tipo}" />
+
+                                            <HBox
+                                                justifyContent="Center">
+
+                                                <Button
+                                                    icon="sap-icon://edit"
+                                                    type="Transparent"
+                                                    tooltip="Editar"
+                                                    press=".onEditarTarea"
+                                                    class="sapUiTinyMarginEnd" />
+
+                                                <Button
+                                                    icon="sap-icon://delete"
+                                                    type="Transparent"
+                                                    tooltip="Eliminar"
+                                                    press=".onEliminarTarea" />
+
+                                            </HBox>
+
+                                        </cells>
+
+                                    </ColumnListItem>
+
+                                </items>
+
+                            </Table>
+
+                        </VBox>
+
+                    </content>
+
+                </Page>
+
+            </pages>
+
+        </App>
+
+    </Shell>
+
+</mvc:View>

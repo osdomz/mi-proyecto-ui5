@@ -1,0 +1,59 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog
+        id="taskDialog"
+        title="Nueva tarea"
+        contentWidth="400px">
+
+        <content>
+            <VBox class="sapUiSmallMargin">
+
+                <Label text="Título de la tarea" />
+
+                <Input
+                    id="taskTitleInput"
+                    placeholder="Introduce el título..." />
+
+                <Label
+                    text="Estado"
+                    class="sapUiSmallMarginTop" />
+
+                <Select id="taskStatusSelect">
+                    <items>
+
+                        <core:Item
+                            key="Pendiente"
+                            text="Pendiente" />
+
+                        <core:Item
+                            key="En Proceso"
+                            text="En Proceso" />
+
+                        <core:Item
+                            key="Completado"
+                            text="Completado" />
+
+                    </items>
+                </Select>
+
+            </VBox>
+        </content>
+
+        <beginButton>
+            <Button
+                text="Cancelar"
+                press=".onCancelarTarea" />
+        </beginButton>
+
+        <endButton>
+            <Button
+                text="Guardar"
+                type="Emphasized"
+                press=".onGuardarTarea" />
+        </endButton>
+
+    </Dialog>
+
+</core:FragmentDefinition>
